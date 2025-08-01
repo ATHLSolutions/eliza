@@ -26,6 +26,35 @@ export default {
             container: {
                 center: true
             },
+            animation: {
+                'gradient': 'gradient 15s ease infinite',
+                'shimmer': 'shimmer 2s linear infinite',
+                'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+                gradient: {
+                    '0%, 100%': {
+                        'background-size': '200% 200%',
+                        'background-position': 'left center'
+                    },
+                    '50%': {
+                        'background-size': '200% 200%',
+                        'background-position': 'right center'
+                    }
+                },
+                shimmer: {
+                    '0%': {
+                        'background-position': '-200px 0'
+                    },
+                    '100%': {
+                        'background-position': 'calc(200px + 100%) 0'
+                    }
+                },
+                float: {
+                    '0%, 100%': { transform: 'translateY(0px)' },
+                    '50%': { transform: 'translateY(-10px)' }
+                }
+            },
     		colors: {
     			background: 'hsl(var(--background))',
     			foreground: 'hsl(var(--foreground))',

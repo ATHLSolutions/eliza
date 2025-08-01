@@ -354,7 +354,7 @@ export default function Page({ agentId }: { agentId: UUID }) {
                             disabled={!input || sendMessageMutation?.isPending}
                             type="submit"
                             size="sm"
-                            className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 h-9 px-6"
+                            className="btn-gradient text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 h-9 px-6"
                         >
                             {sendMessageMutation?.isPending ? (
                                 <div className="flex items-center gap-2">

@@ -48,7 +48,7 @@ export default function Home() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {agents?.map((agent: { id: UUID; name: string }) => (
-                    <Card key={agent.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 glassmorphism border-0">
+                    <Card key={agent.id} className="group card-hover glassmorphism border-0 animate-float">
                         <CardHeader className="pb-3">
                             <CardTitle className="flex items-center gap-2 text-lg">
                                 <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
@@ -57,10 +57,10 @@ export default function Home() {
                         </CardHeader>
                         <CardContent className="pb-4">
                             <div className="relative rounded-xl bg-gradient-to-br from-blue-500/10 to-purple-500/10 aspect-square w-full grid place-items-center overflow-hidden group-hover:from-blue-500/20 group-hover:to-purple-500/20 transition-all duration-300">
-                                <div className="text-4xl font-bold uppercase bg-gradient-to-br from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                                <div className="text-4xl font-bold uppercase text-gradient">
                                     {formatAgentName(agent?.name)}
                                 </div>
-                                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                                <div className="absolute inset-0 shimmer opacity-0 group-hover:opacity-100"></div>
                             </div>
                         </CardContent>
                         <CardFooter className="pt-0">
@@ -70,7 +70,7 @@ export default function Home() {
                                     className="flex-1"
                                 >
                                     <Button
-                                        className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300"
+                                        className="w-full btn-gradient text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300"
                                     >
                                         <MessageCircle className="w-4 h-4 mr-2" />
                                         Chat
