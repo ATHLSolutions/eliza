@@ -23,34 +23,37 @@ function App() {
     return (
         <QueryClientProvider client={queryClient}>
             <div
-                className="dark antialiased"
+                className="dark antialiased min-h-screen"
                 style={{
                     colorScheme: "dark",
                 }}
             >
-                <BrowserRouter>
-                    <TooltipProvider delayDuration={0}>
-                        <SidebarProvider>
-                            <AppSidebar />
-                            <SidebarInset>
-                                <div className="flex flex-1 flex-col gap-4 size-full container">
-                                    <Routes>
-                                        <Route path="/" element={<Home />} />
-                                        <Route
-                                            path="chat/:agentId"
-                                            element={<Chat />}
-                                        />
-                                        <Route
-                                            path="settings/:agentId"
-                                            element={<Overview />}
-                                        />
-                                    </Routes>
-                                </div>
-                            </SidebarInset>
-                        </SidebarProvider>
-                        <Toaster />
-                    </TooltipProvider>
-                </BrowserRouter>
+                <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
+                <div className="relative z-10">
+                    <BrowserRouter>
+                        <TooltipProvider delayDuration={0}>
+                            <SidebarProvider>
+                                <AppSidebar />
+                                <SidebarInset>
+                                    <div className="flex flex-1 flex-col size-full min-h-screen">
+                                        <Routes>
+                                            <Route path="/" element={<Home />} />
+                                            <Route
+                                                path="chat/:agentId"
+                                                element={<Chat />}
+                                            />
+                                            <Route
+                                                path="settings/:agentId"
+                                                element={<Overview />}
+                                            />
+                                        </Routes>
+                                    </div>
+                                </SidebarInset>
+                            </SidebarProvider>
+                            <Toaster />
+                        </TooltipProvider>
+                    </BrowserRouter>
+                </div>
             </div>
         </QueryClientProvider>
     );
